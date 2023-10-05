@@ -1,6 +1,7 @@
 import React from 'react'
 import { habitats } from '../app/api/services';
 import MasterList from '../app/common/MasterList';
+import { Typography } from '@mui/material';
 
 const Habitat = () => {
     const columns = [
@@ -29,7 +30,10 @@ const Habitat = () => {
     ];
 
     return (
-        <MasterList columns={columns} feature={habitats}/>
+        <>
+            <Typography variant="h2" component="div" align="center">Habitats</Typography>
+            <MasterList columns={columns} feature={habitats} />
+        </>
     );
 };
 

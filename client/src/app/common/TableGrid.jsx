@@ -3,6 +3,12 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 
 const TableGrid = ({ columns, data }) => {
+
+  const columnHeaderStyle = {
+    backgroundColor: 'lightsteelblue',
+    fontSize: 16,
+  };
+
   // Use destructuring and reduce to create the columnVisibilityModel object
   const columnVisibilityModel = columns.filter((item) => item.hide === true)
     .reduce((result, column) => {
@@ -15,7 +21,10 @@ const TableGrid = ({ columns, data }) => {
   return (
     <Box sx={{ height: 400, width: "100%" }}>
       <DataGrid
-        sx={{ '& .MuiDataGrid-columnSeparator': { display: 'none' } }}
+        sx={{
+          '& .MuiDataGrid-columnSeparator': { display: 'none' },
+          "& .MuiDataGrid-columnHeaders": columnHeaderStyle
+        }}
         rows={data}
         columns={columns}
         initialState={{

@@ -1,6 +1,7 @@
 import React from 'react'
 import { monsters } from '../app/api/services';
 import MasterList from '../app/common/MasterList';
+import { Typography } from '@mui/material';
 
 const Monster = () => {
     const columns = [
@@ -22,7 +23,10 @@ const Monster = () => {
     ];
 
     return (
-        <MasterList columns={columns} feature={monsters}/>
+        <>
+        <Typography variant="h2" component="div" align="center">Monsters</Typography>
+        <MasterList columns={columns} feature={monsters} />
+    </>
     );
 };
 

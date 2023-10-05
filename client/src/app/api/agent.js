@@ -5,7 +5,7 @@ import { history } from "./../..";
 console.log(process.env.REACT_APP_API_URL ?? process.env);
 
 // axios.defaults.baseURL = process.env.REACT_APP_API_URL;
-axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "api";
+axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000/api" : "api";
 
 axios.interceptors.response.use(undefined, (error) => {
     if (error.message === "Network Error" && !error.response) {
